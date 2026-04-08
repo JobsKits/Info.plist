@@ -1,82 +1,90 @@
-#  配置`info.plist`
+#  ⚙️配置`info.plist`
 
-* 这个文件不需要包含进项目工程，系统通过自检（读取指定目录下的指定名的文件）读取，如果包含进项目，编译会出问题
-* 用**Open As Source Code**的方式，打开`info.plist`，并添加以下信息
+![Jobs倾情奉献](https://picsum.photos/1500/400 "Jobs出品，必属精品")
+
 [toc]
-## 1、App索取用户权限（做多语言化处理）
-```xml
-<key>NSFaceIDUsageDescription</key>
-<string>$(NSFaceIDUsageDescription)</string><!-- App需要您的同意，才能访问您的面容识别功能，用于安全验证 -->
-<key>NSAppleMusicUsageDescription</key>
-<string>$(NSAppleMusicUsageDescription)</string><!-- Add tracks to your music library. -->
-<key>NSBluetoothAlwaysUsageDescription</key>
-<string>$(NSBluetoothAlwaysUsageDescription)</string><!-- 若不允许，你将无法使用联机服务 -->
-<key>NSBluetoothPeripheralUsageDescription</key>
-<string>$(NSBluetoothPeripheralUsageDescription)</string><!-- 若不允许，你将无法使用联机服务 -->
-<key>NSCalendarsUsageDescription</key>
-<string>$(NSCalendarsUsageDescription)</string><!-- 若不允许，你将无法使用添加日历功能 -->
-<key>NSCameraUsageDescription</key>
-<string>$(NSCameraUsageDescription)</string><!-- 若不允许，你将无法使用拍照功能 -->
-<key>NSContactsUsageDescription</key>
-<string>$(NSContactsUsageDescription)</string><!-- 通讯录信息仅用于查找联系人，并会得到严格保密 -->
-<key>NSHealthShareUsageDescription</key>
-<string>$(NSHealthShareUsageDescription)</string><!-- 若不允许，你将无法参与运动排行榜活动 -->
-<key>NSHealthUpdateUsageDescription</key>
-<string>$(NSHealthUpdateUsageDescription)</string><!-- 若不允许，你将无法参与运动排行榜活动 -->
-<key>NSHomeKitUsageDescription</key>
-<string>$(NSHomeKitUsageDescription)</string><!-- 若不允许，你将无法使用智能家居服务 -->
-<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>$(NSLocationAlwaysAndWhenInUseUsageDescription)</string><!-- 我们需要获取你的定位权限以供完成查找附近商户功能 -->
-<key>NSLocationAlwaysUsageDescription</key>
-<string>$(NSLocationAlwaysUsageDescription)</string><!-- 我们需要您的同意,您的位置信息将用于查看当前位置信息 -->
-<key>NSLocationWhenInUseUsageDescription</key>
-<string>$(NSLocationWhenInUseUsageDescription)</string><!-- 我们需要获取你的定位权限以供完成查找附近商户功能 -->
-<key>NSMicrophoneUsageDescription</key>
-<string>$(NSMicrophoneUsageDescription)</string><!-- 我们需要获取你的麦克风权限以供完成语音搜索功能 -->
-<key>NSMotionUsageDescription</key>
-<string>$(NSMotionUsageDescription)</string><!-- 我们需要获取你的运动权限以完成运动挑战赛功能 -->
-<key>NSPhotoLibraryAddUsageDescription</key>
-<string>$(NSPhotoLibraryAddUsageDescription)</string><!-- 我们需要获取你的相册权限以完成选择本地图片功能 -->
-<key>NSPhotoLibraryUsageDescription</key>
-<string>$(NSPhotoLibraryUsageDescription)</string><!-- 我们需要获取你的相册权限以完成选择本地图片功能 -->
-<key>NSRemindersUsageDescription</key>
-<string>$(NSRemindersUsageDescription)</string><!-- 我们需要获取你的提醒事项权限以供添加提醒事项 -->
-<key>NSSiriUsageDescription</key>
-<string>$(NSSiriUsageDescription)</string><!-- 我们需要获取你的Siri权限以方便完成Siri建议功能 -->
-<key>NSSpeechRecognitionUsageDescription</key>
-<string>$(NSSpeechRecognitionUsageDescription)</string><!-- 我们需要获取你的语音识别功能已完成键盘语音识别输入功能 -->
-<key>NSVideoSubscriberAccountUsageDescription</key>
-<string>$(NSVideoSubscriberAccountUsageDescription)</string><!-- 我们需要获取你的TV权限 -->
-```
+## 一、前言
 
-*Localizable.strings(English)* <font color=red>**多语言映射文件**</font>
+* **`info.plist`不需要包含进项目工程。**系统通过自检（读取指定目录下的指定名的文件）读取
+* <font color=red>**如果包含进项目，编译会报错**</font>
 
-```
-/// 权限设置
-"App需要您的同意，才能访问您的面容识别功能，用于安全验证" = "NSFaceIDUsageDescription";
-"添加曲目到您的音乐库" = "NSAppleMusicUsageDescription";
-"若不允许，你将无法使用联机服务" = "NSBluetoothAlwaysUsageDescription";
-"若不允许，你将无法使用联机服务" = "NSBluetoothPeripheralUsageDescription";
-"若不允许，你将无法使用添加日历功能" = "NSCalendarsUsageDescription";
-"若不允许，你将无法使用拍照功能" = "NSCameraUsageDescription";
-"通讯录信息仅用于查找联系人，并会得到严格保密" = "NSContactsUsageDescription";
-"若不允许，你将无法参与运动排行榜活动" = "NSHealthShareUsageDescription";
-"若不允许，你将无法参与运动排行榜活动" = "NSHealthUpdateUsageDescription";
-"若不允许，你将无法使用智能家居服务" = "NSHomeKitUsageDescription";
-"我们需要获取你的定位权限以供完成查找附近商户功能" = "NSLocationAlwaysAndWhenInUseUsageDescription";
-"我们需要您的同意,您的位置信息将用于查看当前位置信息" = "NSLocationAlwaysUsageDescription";
-"我们需要获取你的定位权限以供完成查找附近商户功能" = "NSLocationWhenInUseUsageDescription";
-"我们需要获取你的麦克风权限以供完成语音搜索功能" = "NSMicrophoneUsageDescription";
-"我们需要获取你的运动权限以完成运动挑战赛功能" = "NSMotionUsageDescription";
-"我们需要获取你的相册权限以完成选择本地图片功能" = "NSPhotoLibraryAddUsageDescription";
-"我们需要获取你的相册权限以完成选择本地图片功能" = "NSPhotoLibraryUsageDescription";
-"我们需要获取你的提醒事项权限以供添加提醒事项" = "NSRemindersUsageDescription";
-"我们需要获取你的Siri权限以方便完成Siri建议功能" = "NSSiriUsageDescription";
-"我们需要获取你的语音识别功能已完成键盘语音识别输入功能" = "NSSpeechRecognitionUsageDescription";
-"我们需要获取你的TV权限" = "NSVideoSubscriberAccountUsageDescription";
-```
+## 二、配置（以**`Open As Source Code`**的方式打开）
 
-## 2、App多语言化
+### 2.1、App索取用户权限（兼容处理多语言国际化方案）
+
+*  <font color=red>**多语言映射文件**</font> ➤ `Localizable.strings(English)`
+
+  ```
+  /// 权限设置
+  "App需要您的同意，才能访问您的面容识别功能，用于安全验证" = "NSFaceIDUsageDescription";
+  "添加曲目到您的音乐库" = "NSAppleMusicUsageDescription";
+  "若不允许，你将无法使用联机服务" = "NSBluetoothAlwaysUsageDescription";
+  "若不允许，你将无法使用联机服务" = "NSBluetoothPeripheralUsageDescription";
+  "若不允许，你将无法使用添加日历功能" = "NSCalendarsUsageDescription";
+  "若不允许，你将无法使用拍照功能" = "NSCameraUsageDescription";
+  "通讯录信息仅用于查找联系人，并会得到严格保密" = "NSContactsUsageDescription";
+  "若不允许，你将无法参与运动排行榜活动" = "NSHealthShareUsageDescription";
+  "若不允许，你将无法参与运动排行榜活动" = "NSHealthUpdateUsageDescription";
+  "若不允许，你将无法使用智能家居服务" = "NSHomeKitUsageDescription";
+  "我们需要获取你的定位权限以供完成查找附近商户功能" = "NSLocationAlwaysAndWhenInUseUsageDescription";
+  "我们需要您的同意,您的位置信息将用于查看当前位置信息" = "NSLocationAlwaysUsageDescription";
+  "我们需要获取你的定位权限以供完成查找附近商户功能" = "NSLocationWhenInUseUsageDescription";
+  "我们需要获取你的麦克风权限以供完成语音搜索功能" = "NSMicrophoneUsageDescription";
+  "我们需要获取你的运动权限以完成运动挑战赛功能" = "NSMotionUsageDescription";
+  "我们需要获取你的相册权限以完成选择本地图片功能" = "NSPhotoLibraryAddUsageDescription";
+  "我们需要获取你的相册权限以完成选择本地图片功能" = "NSPhotoLibraryUsageDescription";
+  "我们需要获取你的提醒事项权限以供添加提醒事项" = "NSRemindersUsageDescription";
+  "我们需要获取你的Siri权限以方便完成Siri建议功能" = "NSSiriUsageDescription";
+  "我们需要获取你的语音识别功能已完成键盘语音识别输入功能" = "NSSpeechRecognitionUsageDescription";
+  "我们需要获取你的TV权限" = "NSVideoSubscriberAccountUsageDescription";
+  ```
+
+* ```xml
+  <key>NSFaceIDUsageDescription</key>
+  <string>$(NSFaceIDUsageDescription)</string><!-- App需要您的同意，才能访问您的面容识别功能，用于安全验证 -->
+  <key>NSAppleMusicUsageDescription</key>
+  <string>$(NSAppleMusicUsageDescription)</string><!-- Add tracks to your music library. -->
+  <key>NSBluetoothAlwaysUsageDescription</key>
+  <string>$(NSBluetoothAlwaysUsageDescription)</string><!-- 若不允许，你将无法使用联机服务 -->
+  <key>NSBluetoothPeripheralUsageDescription</key>
+  <string>$(NSBluetoothPeripheralUsageDescription)</string><!-- 若不允许，你将无法使用联机服务 -->
+  <key>NSCalendarsUsageDescription</key>
+  <string>$(NSCalendarsUsageDescription)</string><!-- 若不允许，你将无法使用添加日历功能 -->
+  <key>NSCameraUsageDescription</key>
+  <string>$(NSCameraUsageDescription)</string><!-- 若不允许，你将无法使用拍照功能 -->
+  <key>NSContactsUsageDescription</key>
+  <string>$(NSContactsUsageDescription)</string><!-- 通讯录信息仅用于查找联系人，并会得到严格保密 -->
+  <key>NSHealthShareUsageDescription</key>
+  <string>$(NSHealthShareUsageDescription)</string><!-- 若不允许，你将无法参与运动排行榜活动 -->
+  <key>NSHealthUpdateUsageDescription</key>
+  <string>$(NSHealthUpdateUsageDescription)</string><!-- 若不允许，你将无法参与运动排行榜活动 -->
+  <key>NSHomeKitUsageDescription</key>
+  <string>$(NSHomeKitUsageDescription)</string><!-- 若不允许，你将无法使用智能家居服务 -->
+  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+  <string>$(NSLocationAlwaysAndWhenInUseUsageDescription)</string><!-- 我们需要获取你的定位权限以供完成查找附近商户功能 -->
+  <key>NSLocationAlwaysUsageDescription</key>
+  <string>$(NSLocationAlwaysUsageDescription)</string><!-- 我们需要您的同意,您的位置信息将用于查看当前位置信息 -->
+  <key>NSLocationWhenInUseUsageDescription</key>
+  <string>$(NSLocationWhenInUseUsageDescription)</string><!-- 我们需要获取你的定位权限以供完成查找附近商户功能 -->
+  <key>NSMicrophoneUsageDescription</key>
+  <string>$(NSMicrophoneUsageDescription)</string><!-- 我们需要获取你的麦克风权限以供完成语音搜索功能 -->
+  <key>NSMotionUsageDescription</key>
+  <string>$(NSMotionUsageDescription)</string><!-- 我们需要获取你的运动权限以完成运动挑战赛功能 -->
+  <key>NSPhotoLibraryAddUsageDescription</key>
+  <string>$(NSPhotoLibraryAddUsageDescription)</string><!-- 我们需要获取你的相册权限以完成选择本地图片功能 -->
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>$(NSPhotoLibraryUsageDescription)</string><!-- 我们需要获取你的相册权限以完成选择本地图片功能 -->
+  <key>NSRemindersUsageDescription</key>
+  <string>$(NSRemindersUsageDescription)</string><!-- 我们需要获取你的提醒事项权限以供添加提醒事项 -->
+  <key>NSSiriUsageDescription</key>
+  <string>$(NSSiriUsageDescription)</string><!-- 我们需要获取你的Siri权限以方便完成Siri建议功能 -->
+  <key>NSSpeechRecognitionUsageDescription</key>
+  <string>$(NSSpeechRecognitionUsageDescription)</string><!-- 我们需要获取你的语音识别功能已完成键盘语音识别输入功能 -->
+  <key>NSVideoSubscriberAccountUsageDescription</key>
+  <string>$(NSVideoSubscriberAccountUsageDescription)</string><!-- 我们需要获取你的TV权限 -->
+  ```
+
+### 2.2、App多语言化
 
 ```xml
 <!-- 用于指定应用程序的显示名称是否本地化 -->
@@ -94,7 +102,7 @@
 <string>en</string>
 ```
 
-## 3、App添加外部字体
+### 2.3、App添加外部字体
 
 * 需要把外部字体包含进工程项目里面
 
@@ -106,11 +114,11 @@
   </array>
   ```
 
-## 4、App白名单
+### 2.4、App白名单
 
-* iOS 9系统策略更新，限制了http协议的访问，此外应用需要在`Info.plist`中将要使用的URL Schemes列为白名单，才可正常检查其他应用是否安装。
+* **iOS 9**系统策略更新，限制了**http**协议的访问，此外应用需要在`Info.plist`中将要使用的**URL Schemes**列为白名单，才可正常检查其他应用是否安装。
 
-* 当你的应用在iOS 9中需要使用 QQ/QQ空间/支付宝/微信SDK 的相关能力（分享、收藏、支付、登录等）时，需要在`Info.plist`里增加如下代码：
+* 当你的应用在**iOS 9**中需要使用 QQ/QQ空间/支付宝/微信SDK 的相关能力（分享、收藏、支付、登录等）时，需要在`Info.plist`里相应的增加如下代码：
 
   ```xml
   <key>LSApplicationQueriesSchemes</key>
@@ -154,7 +162,7 @@
   </array>
   ```
 
-## 5、App屏幕旋转
+### 2.5、App屏幕旋转
 
 ```xml
 <key>UISupportedInterfaceOrientations</key>
@@ -166,9 +174,9 @@
 </array>
 ```
 
-## 6、iOS 横竖屏UI切换
+### 2.6、iOS 横竖屏UI切换
 
-* iPhone 应用
+* **iPhone** 应用
 
   ```xml
   <key>UISupportedInterfaceOrientations</key>
@@ -180,7 +188,7 @@
   </array>
   ```
 
-* iPad 应用
+* **iPad** 应用
 
   ```xml
   <key>UISupportedInterfaceOrientations~ipad</key>
@@ -192,7 +200,7 @@
   </array>
   ```
 
-## 7、App添加Appicon
+### 2.7、App添加Appicon
 
 ```xml
 <key>CFBundleIcons</key>
@@ -259,7 +267,7 @@
 </dict>
 ```
 
-## 8、iOS 状态栏修改
+### 2.8、iOS 状态栏修改
 
 ```xml
 <!-- iOS 状态栏颜色的修改【全局设置 全局是NO、局部是YES】View controller-based status bar appearance : NO-->
@@ -273,7 +281,7 @@
 <true/>
 ```
 
-## 9、App名
+### 2.9、App名
 
 ```xml
 <!-- 是应用程序的唯一标识符，通常以反转的域名格式（例如：com.example.MyApp）表示。-->
@@ -291,7 +299,7 @@
 <string>CFBundleDisplayName</string>
 ```
 
-## 10、App多场景的支持
+### 2.10、App多场景的支持
 
 ```xml
 <!--❤️【UIApplicationSceneManifest】iOS 13 开始引入。支持多窗口应用程序，允许用户在 iPad 和 macOS 上运行多个实例的应用程序❤️-->
@@ -322,7 +330,7 @@
 </dict>
 ```
 
-## 11、`WKWebKit` 相关
+### 2.11、`WKWebKit` 相关
 
 ```xml
 <!--允许加载外部资源-->
@@ -350,7 +358,7 @@
 ```
 
 
-## 12、其他
+### 2.12、其他
 
 * ```xml
   <!-- 配置 UILaunchStoryboardName，项目里面就必须将 Main.storyboard 包含到工程，进入编译期-->
