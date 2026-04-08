@@ -364,8 +364,173 @@
 <true/>
 ```
 
+### 2.12、给 `Info.plist` 里的文案做本地化
 
-### 2.12、其他
+* `InfoPlist.strings (Chinese, Simplified)`
+
+  ```xml
+  /* 
+    InfoPlist.strings (Chinese, Simplified)
+    JobsSwiftBaseConfigDemo
+  
+    Created by Jobs on 11/17/25.
+    
+  */
+  
+  /* ====== 相机 / 麦克风 / 相册 ====== */
+  "NSCameraUsageDescription" = "需要访问相机用于拍摄照片或视频。";
+  "NSMicrophoneUsageDescription" = "需要访问麦克风用于录音或视频录制。";
+  "NSPhotoLibraryUsageDescription" = "需要访问相册以选择和读取您的照片与视频。";
+  "NSPhotoLibraryAddUsageDescription" = "需要写入相册以保存您拍摄或编辑的图片/视频。";
+  
+  /* ====== 定位（使用期间 / 始终 / 临时精确） ====== */
+  "NSLocationWhenInUseUsageDescription" = "为提供与位置相关的服务，需要在您使用 App 期间访问位置信息。";
+  "NSLocationAlwaysAndWhenInUseUsageDescription" = "为实现持续定位（导航/地理围栏等），需要在前台与后台访问位置信息。";
+  "NSLocationAlwaysUsageDescription" = "需要在前台与后台访问位置信息以提供完整定位服务。";
+  
+  /* iOS 14+ 临时“精确定位”用途声明 */
+  "NavigationPrecise" = "用于精确导航与路线规划。";
+  "NearbySearch" = "用于查找附近的服务与设备。";
+  "ARAnchors" = "用于增强现实场景的精确定位与锚点。";
+  
+  /* ====== 蓝牙（旧/新） ====== */
+  "NSBluetoothAlwaysUsageDescription" = "需要使用蓝牙以连接或管理附近的设备。";
+  "NSBluetoothPeripheralUsageDescription" = "需要使用蓝牙以发现、连接或与周边设备通信。";
+  
+  /* ====== 通讯录 / 日历 / 提醒事项 ====== */
+  "NSContactsUsageDescription" = "需要访问通讯录以选择联系人或自动填充信息。";
+  
+  "NSCalendarsUsageDescription" = "需要访问日历以读取或写入您的日程。";
+  "NSCalendarsFullAccessUsageDescription" = "需要完整访问您的日历以读取、创建与修改日程。";
+  "NSCalendarsWriteOnlyAccessUsageDescription" = "需要向您的日历添加事件（仅写入，不读取已有事件）。";
+  
+  "NSRemindersUsageDescription" = "需要访问提醒事项以读取或创建待办。";
+  "NSRemindersFullAccessUsageDescription" = "需要完整访问提醒事项以读取、创建与修改待办。";
+  "NSRemindersWriteOnlyAccessUsageDescription" = "需要向提醒事项添加待办（仅写入，不读取已有待办）。";
+  
+  /* ====== 健康 / 运动与健身 ====== */
+  "NSHealthShareUsageDescription" = "需要读取健康数据以提供健康相关功能与分析。";
+  "NSHealthUpdateUsageDescription" = "需要写入健康数据以记录您的运动或体征。";
+  "NSHealthClinicalHealthRecordsShareUsageDescription" = "需要读取您的临床健康记录以提供相关服务与建议。";
+  "NSMotionUsageDescription" = "需要访问运动与健身数据（加速度计/步数）以统计与分析活动。";
+  
+  /* ====== 语音 / Siri / Face ID ====== */
+  "NSSpeechRecognitionUsageDescription" = "需要进行语音识别以将您的语音转换为文本。";
+  "NSSiriUsageDescription" = "需要使用 Siri 以执行语音指令或快捷操作。";
+  "NSFaceIDUsageDescription" = "需要使用 Face ID 以快速完成安全验证。";
+  
+  /* ====== 家庭(HomeKit) / 本地网络 / Bonjour ====== */
+  "NSHomeKitUsageDescription" = "需要访问家庭数据以控制或管理您的家庭设备。";
+  "NSLocalNetworkUsageDescription" = "需要访问本地网络以发现和连接局域网中的设备或服务。";
+  
+  /* ====== NFC ====== */
+  "NFCReaderUsageDescription" = "需要使用 NFC 以读取或交互支持的近场标签/设备。";
+  
+  /* ====== Apple Music / 媒体库 ====== */
+  "NSAppleMusicUsageDescription" = "需要访问您的媒体库以读取或播放音乐。";
+  
+  /* ====== 广告跟踪（ATT） ====== */
+  "NSUserTrackingUsageDescription" = "为提供更个性化的内容与广告体验，需要请求跟踪权限；我们不会滥用您的隐私。";
+  
+  /* ====== Nearby Interaction（U1/超宽带） ====== */
+  "NSNearbyInteractionUsageDescription" = "需要使用近距离交互以实现超近距定位与设备交互。";
+  
+  /* ====== TV Provider（视频订阅账户） ====== */
+  "NSVideoSubscriberAccountUsageDescription" = "需要访问您的电视供应商账户以验证订阅并播放内容。";
+  
+  /* ====== 关键提醒（Critical Alerts） ====== */
+  "NSCriticalAlertsUsageDescription" = "需要发送关键提醒以在静音或勿扰模式下也能通知重要事件。";
+  
+  /* ====== 专注状态共享（Focus Status） ====== */
+  "NSFocusStatusUsageDescription" = "需要读取您的专注状态以在合适的时机发送通知或消息。";
+  
+  /* ====== 暴露通知（Exposure Notification） ====== */
+  "NSExposureNotificationUsageDescription" = "需要使用暴露通知以提醒可能的接触风险（仅在获得授权的地区与用途下启用）。";
+  ```
+
+* `InfoPlist.strings (English)`
+
+  ```
+  /* 
+    InfoPlist.strings (English)
+    JobsSwiftBaseConfigDemo
+  
+    Created by Jobs on 11/17/25.
+    
+  */
+  
+  /* ====== Camera / Microphone / Photo Library ====== */
+  "NSCameraUsageDescription" = "This app requires access to the camera to take photos and record videos.";
+  "NSMicrophoneUsageDescription" = "This app requires access to the microphone to record audio and videos.";
+  "NSPhotoLibraryUsageDescription" = "This app requires access to your photo library to select and read your photos and videos.";
+  "NSPhotoLibraryAddUsageDescription" = "This app requires permission to save photos and videos to your photo library.";
+  
+  /* ====== Location (When In Use / Always / Temporary Precise) ====== */
+  "NSLocationWhenInUseUsageDescription" = "To provide location-based services, this app needs access to your location while you are using it.";
+  "NSLocationAlwaysAndWhenInUseUsageDescription" = "To support continuous location features (navigation, geofencing, etc.), this app needs access to your location in the foreground and background.";
+  "NSLocationAlwaysUsageDescription" = "This app needs access to your location in the foreground and background to provide full location services.";
+  
+  /* iOS 14+ temporary precise location reasons */
+  "NavigationPrecise" = "Used for precise navigation and route planning.";
+  "NearbySearch" = "Used to find nearby services and devices.";
+  "ARAnchors" = "Used for precise positioning and anchors in augmented reality experiences.";
+  
+  /* ====== Bluetooth ====== */
+  "NSBluetoothAlwaysUsageDescription" = "This app needs Bluetooth access to connect to and manage nearby devices.";
+  "NSBluetoothPeripheralUsageDescription" = "This app needs Bluetooth access to discover, connect to, and communicate with nearby devices.";
+  
+  /* ====== Contacts / Calendars / Reminders ====== */
+  "NSContactsUsageDescription" = "This app needs access to your contacts to select people or autofill their information.";
+  
+  "NSCalendarsUsageDescription" = "This app needs access to your calendars to read and write your events.";
+  "NSCalendarsFullAccessUsageDescription" = "This app needs full access to your calendars to read, create, and edit your events.";
+  "NSCalendarsWriteOnlyAccessUsageDescription" = "This app needs permission to add events to your calendars (write-only, without reading existing events).";
+  
+  "NSRemindersUsageDescription" = "This app needs access to your reminders to read and create tasks.";
+  "NSRemindersFullAccessUsageDescription" = "This app needs full access to your reminders to read, create, and edit tasks.";
+  "NSRemindersWriteOnlyAccessUsageDescription" = "This app needs permission to add tasks to your reminders (write-only, without reading existing tasks).";
+  
+  /* ====== Health / Motion & Fitness ====== */
+  "NSHealthShareUsageDescription" = "This app needs to read your health data to provide health-related features and analysis.";
+  "NSHealthUpdateUsageDescription" = "This app needs to write health data to log your activities and vital signs.";
+  "NSHealthClinicalHealthRecordsShareUsageDescription" = "This app needs to read your clinical health records to provide related services and suggestions.";
+  "NSMotionUsageDescription" = "This app needs access to motion and fitness data (accelerometer, step count, etc.) to track and analyze your activity.";
+  
+  /* ====== Speech / Siri / Face ID ====== */
+  "NSSpeechRecognitionUsageDescription" = "This app needs speech recognition to convert your voice into text.";
+  "NSSiriUsageDescription" = "This app uses Siri to perform voice commands and shortcuts.";
+  "NSFaceIDUsageDescription" = "This app uses Face ID to quickly and securely verify your identity.";
+  
+  /* ====== HomeKit / Local Network / Bonjour ====== */
+  "NSHomeKitUsageDescription" = "This app needs access to your home data to control and manage your HomeKit devices.";
+  "NSLocalNetworkUsageDescription" = "This app needs access to your local network to discover and connect to devices or services on your LAN.";
+  
+  /* ====== NFC ====== */
+  "NFCReaderUsageDescription" = "This app needs to use NFC to read and interact with supported nearby tags and devices.";
+  
+  /* ====== Apple Music / Media Library ====== */
+  "NSAppleMusicUsageDescription" = "This app needs access to your media library to read and play your music.";
+  
+  /* ====== App Tracking Transparency (ATT) ====== */
+  "NSUserTrackingUsageDescription" = "To provide more personalized content and ads, this app requests permission to track your activity; your privacy will not be misused.";
+  
+  /* ====== Nearby Interaction ====== */
+  "NSNearbyInteractionUsageDescription" = "This app needs Nearby Interaction to enable ultra-short-range positioning and device interactions.";
+  
+  /* ====== TV Provider (Video Subscriber Account) ====== */
+  "NSVideoSubscriberAccountUsageDescription" = "This app needs access to your TV provider account to verify your subscription and play content.";
+  
+  /* ====== Critical Alerts ====== */
+  "NSCriticalAlertsUsageDescription" = "This app needs to send critical alerts so important events can be notified even in Silent or Do Not Disturb mode.";
+  
+  /* ====== Focus Status ====== */
+  "NSFocusStatusUsageDescription" = "This app needs to read your Focus status so it can send notifications and messages at appropriate times.";
+  
+  /* ====== Exposure Notification ====== */
+  "NSExposureNotificationUsageDescription" = "This app needs Exposure Notifications to alert you to possible contact risks (enabled only where authorized).";
+  ```
+
+### 2.13、其他
 
 * ```xml
   <!-- 配置 UILaunchStoryboardName，项目里面就必须将 Main.storyboard 包含到工程，进入编译期-->
